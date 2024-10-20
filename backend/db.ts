@@ -14,7 +14,8 @@ interface User {
 interface Book {
   name: string;
   author: string;
-  publishedDate: string;
+  totalPages: number;
+  readPages: number;
 }
 
 async function connect() {

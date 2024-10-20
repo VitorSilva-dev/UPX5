@@ -8,7 +8,8 @@ dotenv.config();
 interface Book {
   name: string;
   author: string;
-  publishedDate: string;
+  totalPages: number;
+  readPages: number;
 }
 
 class BookController {
@@ -16,7 +17,8 @@ class BookController {
     return [
       body("name").isString().notEmpty(),
       body("author").isString().notEmpty(),
-      body("publishedDate").isString().notEmpty(),
+      !isNaN(body("totalPages")),
+      !isNaN(body("readPages"))
     ];
   }
 
